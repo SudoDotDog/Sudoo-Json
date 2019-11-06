@@ -1,0 +1,42 @@
+{
+  "name": "@sudoo/json",
+  "version": "1.0.0",
+  "description": ":foggy: Read Nested JSON file",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoDotDog/Sudoo-Json.git"
+  },
+  "keywords": [
+    "Json"
+  ],
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SudoDotDog/Sudoo-Json/issues"
+  },
+  "homepage": "https://github.com/SudoDotDog/Sudoo-Json#readme",
+  "dependencies": {
+    "@sudoo/io": "^1.6.1"
+  },
+  "devDependencies": {
+    "@sudoo/triforce": "^1.10.0"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "instrument": true,
+    "reporter": [
+      "json",
+      "text-summary"
+    ],
+    "report-dir": "coverage",
+    "require": [
+      "./test/tshook.js"
+    ],
+    "sourceMap": true
+  }
+}
