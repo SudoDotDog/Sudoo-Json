@@ -11,5 +11,11 @@ export const readNestedJson = async <T extends JSONElement = any>(path: string):
 
     const text: string = await readTextFile(path);
 
-    return text as T;
+    switch (typeof text) {
+
+        case 'string':
+            return JSON.parse(text);
+    }
+
+    throw JSON.parse(text);
 };

@@ -8,7 +8,7 @@
 import { expect } from 'chai';
 import * as Chance from 'chance';
 import { readNestedJson } from '../../src';
-import { mockReadText } from '../mock/text';
+import { mockReadJson } from '../mock/text';
 
 describe('Given [Nested] Functions', (): void => {
 
@@ -18,7 +18,7 @@ describe('Given [Nested] Functions', (): void => {
 
         const text: string = chance.string();
 
-        const restore = mockReadText(text);
+        const restore = mockReadJson(text);
         const result: any = await readNestedJson(chance.string());
 
         expect(result).to.be.equal(text);
