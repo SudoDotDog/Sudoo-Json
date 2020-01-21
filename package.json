@@ -16,11 +16,11 @@
   },
   "homepage": "https://github.com/SudoDotDog/Sudoo-Json#readme",
   "dependencies": {
-    "@sudoo/io": "^1.6.1"
+    "@sudoo/io": "^1.6.2"
   },
   "devDependencies": {
     "@sudoo/mock": "^1.2.0",
-    "@sudoo/triforce": "^1.10.0"
+    "@sudoo/triforce": "^2.1.0"
   },
   "nyc": {
     "extension": [
