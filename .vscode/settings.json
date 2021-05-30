@@ -4,6 +4,7 @@
         "Encryptable",
         "RMRF",
         "Ronpa",
+        "Stringifier",
         "WMXPY",
         "codecov",
         "deserialize",

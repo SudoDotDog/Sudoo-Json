@@ -77,7 +77,6 @@ export class JSONParser<T extends any = any> {
             return false;
         }
 
-
         const verifier: Verifier = Verifier.create(pattern);
         const verifyResult: VerifyResult = verifier.verify(this._parseResult);
 
