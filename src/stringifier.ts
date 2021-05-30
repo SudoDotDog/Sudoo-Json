@@ -21,6 +21,11 @@ export class JSONStringifier<T extends any = any> {
         this._jsonObject = jsonObject;
     }
 
+    public stringify(space?: string | number): string {
+
+        return JSON.stringify(this._jsonObject, null, space);
+    }
+
     public verify(pattern: Pattern): boolean {
 
         const verifier: Verifier = Verifier.create(pattern);
