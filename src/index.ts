@@ -1,8 +1,8 @@
 /**
  * @author WMXPY
- * @namespace Json
+ * @namespace JSON
  * @description Index
  */
 
-export * from "./nested";
+export * from "./parser";
 
