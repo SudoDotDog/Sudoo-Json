@@ -26,7 +26,7 @@ export class JSONStringifier<T extends any = any> {
 
     public stringify(space?: string | number): string {
 
-        return JSON.stringify(this._jsonObject, this._getRunReplaceFunction(), space);
+        return JSON.stringify(this._jsonObject, this._getRunReplaceFunction() as any, space);
     }
 
     public addReplacer(replacer: JSONReplacer): this {
