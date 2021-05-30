@@ -26,14 +26,7 @@ export class JSONStringifier<T extends any = any> {
 
     public stringify(space?: string | number): string {
 
-        if (this._replacers.length > 0) {
-
-            return JSON.stringify(this._jsonObject, (key: string, value: any) => {
-
-                return this._runReplace(key, value);
-            }, space);
-        }
-        return JSON.stringify(this._jsonObject, null, space);
+        return JSON.stringify(this._jsonObject, this._getRunReplaceFunction(), space);
     }
 
     public addReplacer(replacer: JSONReplacer): this {
@@ -55,6 +48,19 @@ export class JSONStringifier<T extends any = any> {
         const verifyResult: VerifyResult = verifier.verify(this._jsonObject);
 
         return verifyResult;
+    }
+
+    private _getRunReplaceFunction(): JSONReplacer | null {
+
+        if (this._replacers.length === 0) {
+
+            return null;
+        }
+
+        return (key: string, value: any) => {
+
+            return this._runReplace(key, value);
+        };
     }
 
     private _runReplace(key: string, value: any): any {
