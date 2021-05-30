@@ -1,4 +1,4 @@
-# Sudoo-Json
+# Sudoo-JSON
 
 [![Build Status](https://travis-ci.com/SudoDotDog/Sudoo-Json.svg?branch=master)](https://travis-ci.com/SudoDotDog/Sudoo-Json)
 [![codecov](https://codecov.io/gh/SudoDotDog/Sudoo-Json/branch/master/graph/badge.svg)](https://codecov.io/gh/SudoDotDog/Sudoo-Json)
