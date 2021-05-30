@@ -28,9 +28,16 @@ export class JSONStringifier<T extends any = any> {
 
     public verify(pattern: Pattern): boolean {
 
+        const verifyResult: VerifyResult = this.rawVerify(pattern);
+
+        return verifyResult.succeed;
+    }
+
+    public rawVerify(pattern: Pattern): VerifyResult {
+
         const verifier: Verifier = Verifier.create(pattern);
         const verifyResult: VerifyResult = verifier.verify(this._jsonObject);
 
-        return verifyResult.succeed;
+        return verifyResult;
     }
 }

@@ -5,7 +5,7 @@
  */
 
 import { Pattern } from "@sudoo/pattern";
-import { Verifier, VerifyResult } from "@sudoo/verify";
+import { createVerifyResult, Verifier, VerifyResult } from "@sudoo/verify";
 
 export class JSONParser<T extends any = any> {
 
@@ -71,15 +71,23 @@ export class JSONParser<T extends any = any> {
 
     public verify(pattern: Pattern): boolean {
 
+        const verifyResult: VerifyResult = this.rawVerify(pattern);
+
+        return verifyResult.succeed;
+    }
+
+    public rawVerify(pattern: Pattern): VerifyResult {
+
         const parseResult: boolean = this.attemptParse();
 
         if (!parseResult) {
-            return false;
+
+            return createVerifyResult(false);
         }
 
         const verifier: Verifier = Verifier.create(pattern);
         const verifyResult: VerifyResult = verifier.verify(this._parseResult);
 
-        return verifyResult.succeed;
+        return verifyResult;
     }
 }
