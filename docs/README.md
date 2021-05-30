@@ -5,4 +5,4 @@
 [![npm version](https://badge.fury.io/js/%40sudoo%2Fjson.svg)](https://badge.fury.io/js/%40sudoo%2Fjson)
 [![downloads](https://img.shields.io/npm/dm/@sudoo/json.svg)](https://www.npmjs.com/package/@sudoo/json)
 
-:foggy: Read Nested JSON file
+JSON tools
