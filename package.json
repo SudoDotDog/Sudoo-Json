@@ -21,7 +21,7 @@
     "@sudoo/triforce": "^2.9.25",
     "@sudoo/verify": "^1.16.0"
   },
-  "optionalDependencies": {
+  "peerDependencies": {
     "@sudoo/pattern": "*",
     "@sudoo/verify": "*"
   },
