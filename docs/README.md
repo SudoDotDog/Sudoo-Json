@@ -16,3 +16,29 @@ npm install @sudoo/json --save
 ```
 
 ## Parse
+
+```ts
+import { JSONParser } from "@sudoo/json";
+
+const parser: JSONParser = JSONParser.from(`{
+    "hello": "world"
+}`);
+
+parser.parseOrThrow(); // Return Object if Valid, Throw Error if invalid
+parser.parseOrDefault({
+    hello: "nothing",
+}); // Return Object if Valid, Default if invalid
+```
+
+## Stringify
+
+```ts
+import { JSONStringifier } from "@sudoo/json";
+
+const stringifier: JSONStringifier = JSONStringifier.from({
+    hello: "world",
+});
+
+parser.stringify(); // Stringify
+parser.stringify(2); // Stringify with space
+```
