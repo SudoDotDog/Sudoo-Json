@@ -27,22 +27,29 @@ export class JSONParser<T extends any = any> {
         return this._parseError;
     }
 
-    public verify(pattern: Pattern): boolean {
+    public parseOrThrow(): T {
 
-        const parseResult: boolean = this._attemptParse();
+        const parseResult: boolean = this.attemptParse();
 
-        if (!parseResult) {
-            return false;
+        if (parseResult) {
+            return this._parseResult as T;
         }
 
-
-        const verifier: Verifier = Verifier.create(pattern);
-        const verifyResult: VerifyResult = verifier.verify(this._parseResult);
-
-        return verifyResult.succeed;
+        throw new Error(this._parseError);
     }
 
-    private _attemptParse(): boolean {
+    public parseOrDefault<D extends any = T>(defaultValue: D): T | D {
+
+        const parseResult: boolean = this.attemptParse();
+
+        if (parseResult) {
+            return this._parseResult as T;
+        }
+
+        return defaultValue;
+    }
+
+    public attemptParse(): boolean {
 
         if (typeof this._parseResult !== 'undefined') {
             return true;
@@ -60,5 +67,20 @@ export class JSONParser<T extends any = any> {
 
             return false;
         }
+    }
+
+    public verify(pattern: Pattern): boolean {
+
+        const parseResult: boolean = this.attemptParse();
+
+        if (!parseResult) {
+            return false;
+        }
+
+
+        const verifier: Verifier = Verifier.create(pattern);
+        const verifyResult: VerifyResult = verifier.verify(this._parseResult);
+
+        return verifyResult.succeed;
     }
 }
