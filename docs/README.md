@@ -6,3 +6,13 @@
 [![downloads](https://img.shields.io/npm/dm/@sudoo/json.svg)](https://www.npmjs.com/package/@sudoo/json)
 
 JSON tools
+
+## Install
+
+```sh
+yarn add @sudoo/json
+# Or
+npm install @sudoo/json --save
+```
+
+## Parse
