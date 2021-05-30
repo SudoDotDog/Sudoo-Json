@@ -4,23 +4,27 @@
   "description": ":foggy: Read Nested JSON file",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SudoDotDog/Sudoo-Json.git"
+    "url": "git+https://github.com/SudoDotDog/Sudoo-JSON.git"
   },
   "keywords": [
-    "Json"
+    "JSON"
   ],
   "author": "WMXPY",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SudoDotDog/Sudoo-Json/issues"
+    "url": "https://github.com/SudoDotDog/Sudoo-JSON/issues"
   },
-  "homepage": "https://github.com/SudoDotDog/Sudoo-Json#readme",
-  "dependencies": {
-    "@sudoo/io": "^1.6.2"
-  },
+  "homepage": "https://github.com/SudoDotDog/Sudoo-JSON#readme",
   "devDependencies": {
-    "@sudoo/mock": "^1.2.0",
-    "@sudoo/triforce": "^2.1.0"
+    "@sudoo/io": "^1.6.2",
+    "@sudoo/mock": "^1.5.0",
+    "@sudoo/pattern": "^1.6.1",
+    "@sudoo/triforce": "^2.9.25",
+    "@sudoo/verify": "^1.16.0"
+  },
+  "peerDependencies": {
+    "@sudoo/pattern": "*",
+    "@sudoo/verify": "*"
   },
   "nyc": {
     "extension": [
